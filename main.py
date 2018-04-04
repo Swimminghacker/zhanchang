@@ -19,3 +19,4 @@ if __name__ == '__main__':
 			print("ok")
 			break
 		time.sleep(1)
+	input('按任意键继续...')
