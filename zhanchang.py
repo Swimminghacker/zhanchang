@@ -1,5 +1,6 @@
 import requests
 import baiyuncookie
+from user import User
 
 class Zhanchang():
   def getResponse(self,url,data,headers):
@@ -15,7 +16,10 @@ class Zhanchang():
                 'file':'M.1508934884.A',\
                 'title':'Re: 【公告】绿茵场预约留言墙暨预约公告'.encode('gb2312'),\
                 'text':text.encode('gb2312','ignore')}
-      cookie = baiyuncookie.BaiyunCookie('Swimmingcome','zaiaswm.')
+      user = User('user.txt')
+      userName = user.getUsername()
+      password = user.getPassword()
+      cookie = baiyuncookie.BaiyunCookie(userName,password)
       cookie_to_get = cookie.getCookie()
       #print(cookie_to_get)
       headers = {'Cookie':cookie_to_get,'content-Type':'application/x-www-form-urlencoded'}
